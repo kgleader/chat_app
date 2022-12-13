@@ -12,6 +12,10 @@ dependencies:
   flutter: 
     sdk: flutter
   firebase_core: ^2.3.0
+  animated_text_kit: ^4.2.2
+  firebase_auth: ^4.2.0
+  shared_preferences: ^2.0.15
+  cloud_firestore: ^4.2.0
 
 dev_dependencies: 
   flutter_lints: ^2.0.0
@@ -20,4 +24,6 @@ dev_dependencies:
 
 flutter: 
   uses-material-design: true
+  assets: 
+  - assets/
 

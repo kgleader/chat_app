@@ -10,16 +10,20 @@ class HomeView extends GetView<HomeController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('HomeView'),
+        title: const Text('⚡️Chat'),
         centerTitle: true,
         actions: [
-          PopupMenuItem(
-            child: const Text('Logout Account'),
-            onTap: () async => await controller.logout(),
-          ),
-          PopupMenuItem(
-            child: const Text('Delete Account'),
-            onTap: () async => await controller.delete(),
+          PopupMenuButton(
+            itemBuilder: (context) => [
+              PopupMenuItem(
+                child: const Text('Logout Account'),
+                onTap: () async => await controller.logout(),
+              ),
+              PopupMenuItem(
+                onTap: () async => await controller.delete(),
+                child: const Text('Delete Account'),
+              ),
+            ],
           ),
         ],
       ),

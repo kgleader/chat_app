@@ -1,5 +1,4 @@
 import 'package:chat_app/src/service/user_manager.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class HomeService {
@@ -12,8 +11,4 @@ class HomeService {
     await FirebaseAuth.instance.currentUser?.delete();
     await userManager.removeUid();
   }
-
-  static sendMessage(String sms) {}
-
-  static Stream<QuerySnapshot<Map<String, dynamic>>> streamMessages() {}
 }

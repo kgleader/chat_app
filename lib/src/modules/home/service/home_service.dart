@@ -11,4 +11,6 @@ class HomeService {
     await FirebaseAuth.instance.currentUser?.delete();
     await userManager.removeUid();
   }
+
+  static sendMessage(String text) {}
 }

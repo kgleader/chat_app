@@ -33,8 +33,8 @@ class HomeView extends GetView<HomeController> {
         children: [
           const MessagesStream(),
           SendMessage(
-            TextEditingController(),
-            () {},
+            controller.smsController,
+            () async => controller.sendMessage(),
           ),
         ],
       ),

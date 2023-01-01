@@ -26,8 +26,7 @@ class HomeController extends GetxController {
 
   Future<void> sendMessage() async {
     final sms = smsController.text.trim();
-    print(sms);
-    print(sms != '');
+    smsController.text = '';
     if (sms != '') {
       await HomeService.sendMessage(sms);
     }

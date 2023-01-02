@@ -1,9 +1,11 @@
-import 'package:flutter/cupertino.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:chat_app/src/routes/app_pages.dart';
+
+import '../../../routes/app_pages.dart';
 
 import '../../../utils/app_dialogs.dart';
-import '../service/home_service.dart';
+import '../services/home_service.dart';
 
 class HomeController extends GetxController {
   final count = 0.obs;
@@ -13,13 +15,13 @@ class HomeController extends GetxController {
   final smsController = TextEditingController();
 
   Future<void> logout() async {
-    AppDialog.showLoading();
+    AppDaiLog.showLoading();
     await HomeService.logout();
     await Get.offAllNamed(Routes.FLASH_CHAT);
   }
 
   Future<void> delete() async {
-    AppDialog.showLoading();
+    AppDaiLog.showLoading();
     await HomeService.delete();
     await Get.offAllNamed(Routes.FLASH_CHAT);
   }
@@ -30,5 +32,9 @@ class HomeController extends GetxController {
     if (sms != '') {
       await HomeService.sendMessage(sms);
     }
+  }
+
+  Stream<QuerySnapshot<Map<String, dynamic>>> streamMessages() {
+    return HomeService.streamMessages();
   }
 }

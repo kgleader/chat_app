@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
-class AppDialog {
+class AppDaiLog {
   static void showLoading() {
     Get.defaultDialog(content: const CupertinoActivityIndicator(radius: 20));
   }

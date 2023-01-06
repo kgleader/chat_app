@@ -27,7 +27,7 @@ class SendMessage extends StatelessWidget {
               maxLines: 5,
               minLines: 1,
               decoration: const InputDecoration(
-                hintText: 'Type your message here',
+                hintText: 'Typе your message here',
                 border: OutlineInputBorder(borderSide: BorderSide.none),
               ),
             ),

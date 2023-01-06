@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
-import '../../../components/components.dart';
+import '../../../components/message/message_stream.dart';
 import '../../../components/message/send_message.dart';
 import '../controllers/home_controller.dart';
 
@@ -31,7 +31,7 @@ class HomeView extends GetView<HomeController> {
       ),
       body: Column(
         children: [
-          const MessagesStream(),
+          MessagesStream(controller.streamMessages()),
           SendMessage(
             controller.smsController,
             () async => controller.sendMessage(),
